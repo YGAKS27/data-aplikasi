@@ -7,6 +7,7 @@
   <style>
     :root{
       --bg:#0f0f10;
+      --bg-light:#1a1a1c;
       --muted:#bdbdbd;
     }
     *{box-sizing:border-box}
@@ -18,28 +19,50 @@
       -webkit-font-smoothing:antialiased;
       padding: 15px;
       line-height:1.6;
+      transition: background 0.6s ease;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
     }
-    .wrap{max-width:800px;margin:0 auto}
-    .hero{overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.6);margin-bottom:22px}
-    .hero img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover}
+    body.scrolled {
+      background: linear-gradient(180deg,var(--bg-light),#141414);
+    }
+    .wrap{max-width:800px;margin:0 auto;flex:1}
     h1{font-size:16px;margin:0 0 14px;text-align:center}
     p{margin:0 0 14px;color:#dcdcdc;font-size:15px;text-align:justify}
-    footer{margin-top:28px;color:var(--muted);font-size:12px;text-align:center}
+    footer{
+      color:var(--muted);
+      font-size:12px;
+      text-align:center;
+      padding:20px 10px;
+      border-top:1px solid rgba(255,255,255,0.1);
+      margin-top:20px;
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
-    <div class="hero">
-      <img src="https://content-hub.dribbble.com/wp-content/uploads/2024/02/hero_image-34-1522x840.png" alt="Banner belajar bahasa Jepang" loading="lazy">
-    </div>
     <h1>Aplikasi Belajar Bahasa Jepang</h1>
     <p>Aplikasi ini dirancang untuk memudahkan siapa saja dalam mempelajari bahasa Jepang. Hadir dengan fitur kosakata, tata bahasa, latihan interaktif, serta panduan pengucapan dengan desain sederhana dan modern.</p>
     <p>Setiap fitur dibuat agar proses belajar lebih menyenangkan: sesi singkat, tampilan bersih, dan variasi desain yang intuitif. Pengguna bisa mengakses materi JLPT dasar, latihan percakapan, hingga proyek kreatif yang membantu memahami bahasa dengan cara visual.</p>
     <p>Aplikasi ini dikembangkan oleh PlesaTeam's, seorang pembelajar desain dan teknologi yang juga sedang menekuni bahasa Jepang. Melalui perjalanan belajar dan eksplorasi desain modern, membangun aplikasi ini sebagai wujud semangat mengejar mimpi dan berbagi manfaat bagi orang lain.</p>
     <p>Aplikasi ini bukan hanya alat belajar bahasa, tapi juga refleksi perjalanan kreatif: memadukan dunia desain, aplikasi, dan bahasa asing dalam satu karya yang sederhana, fungsional, dan penuh inspirasi.</p>
-    <p>Versi: 1.2.0</p>
-    <p>Terakhir diperbarui: 17 Agustus 2025</p>
-    <footer>© 2025 Dikembangkan oleh PlesaTeam by Ygaks</footer>
+    <p>Kami selalu mengembangkan aplikasi ini tentang isi data dan design aplikasi untuk penbelajaran.</p>
+    <p>Selain itu, aplikasi ini juga menghadirkan mode belajar fleksibel yang dapat disesuaikan dengan kebutuhan pengguna. Misalnya, ada mode belajar cepat untuk mereka yang ingin memanfaatkan waktu singkat, serta mode mendalam yang menyediakan penjelasan detail, contoh kalimat, dan latihan soal agar pemahaman semakin kuat. Setiap materi dipilih dan disusun dengan hati-hati agar sesuai dengan standar pembelajaran internasional sekaligus tetap mudah dipahami.</p>
+    <p>Fitur pencapaian (achievement) dan progres belajar juga tersedia untuk memotivasi pengguna. Dengan sistem ini, setiap kemajuan kecil akan terasa lebih berarti, karena pengguna dapat melihat perkembangan kemampuan mereka dari hari ke hari. Desain aplikasi dibuat responsif, sehingga nyaman digunakan baik di ponsel, tablet, maupun komputer.</p>
+    <p>Visi utama dari aplikasi ini adalah menciptakan pengalaman belajar bahasa Jepang yang menyenangkan, konsisten, dan bermanfaat. Kami percaya bahwa setiap orang bisa belajar bahasa asing dengan cara yang menyenangkan apabila didukung oleh alat yang tepat, materi yang jelas, serta tampilan yang menarik. Itulah sebabnya aplikasi ini terus diperbarui secara berkala, baik dari segi tampilan maupun isi konten, agar pengguna selalu mendapatkan pengalaman terbaik.</p>
+    <p>Dengan adanya aplikasi ini, kami berharap semakin banyak orang bisa mengenal budaya dan bahasa Jepang secara lebih mendalam, serta menjadikannya jembatan untuk membuka peluang baru di bidang pendidikan, pekerjaan, maupun persahabatan lintas negara.</p>
   </div>
+  <footer>© 2025 Dikembangkan oleh PlesaTeam by Ygaks</footer>
+
+  <script>
+    window.addEventListener("scroll", function(){
+      if(window.scrollY > 50){ 
+        document.body.classList.add("scrolled");
+      } else {
+        document.body.classList.remove("scrolled");
+      }
+    });
+  </script>
 </body>
 </html>
